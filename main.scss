@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px; // remove default browser margin
+  padding: 0px; // remove default browser padding
+}
+
+html {
+  // html element with no set height will auto adjuste according to the body height
+  background-color: white; // var
+}
+
+body {
+  min-height: 100vh; // minimum full viewport height
+  width: 100%; // full viewport width
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-attachment: #E7E7E7;
+}
