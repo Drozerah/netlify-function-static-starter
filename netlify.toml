@@ -1,22 +1,19 @@
 [dev]
   publish = "dist"
   command = "npm run dev"
-  framework = "#static"
+  functions = "functions"
 
 [build]
   publish = "dist"
   command = "npm run build"
-  framework = "#static"
-
-[functions]
-  directory = "functions/"
+  functions = "functions"
 
 [[redirects]]
-  from = "api/v1/*"
-  to= ".netlify/functions/:splat"
+  from = "/api/v1/*"
+  to = "/.netlify/functions/:splat"
   status = 200
 
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "/index.html"
   status = 200
