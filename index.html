@@ -5,14 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css?v=hash">
-  <script src="/js/app.bundle.js?v=hash" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js" defer></script>
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/json.min.js" defer></script>
+  <script src="/js/app.bundle.js?v=hash" defer></script>
   <title>APP_NAME</title>
 </head>
 <body>
-  <h1>APP_NAME</h1>
-  <div class="content">
+  <header>
+    <h1>APP_NAME</h1>
+  </header>
+  <main class="content">
     <h2>API Endpoints</h2>
     <div class="endpoints">
       <div class="endpoint">
@@ -28,7 +34,7 @@
             <code>/api/v1/event</code> <a href="api/v1/event" target="_blanck">  open in new tab <span class="material-icons">open_in_new</span></a>
           </div>
           <div>
-            <code>/api/v1/event</code> <a href="api/v1/event" target="_blanck">  fetch data <span class="material-icons">ads_click</span></a>
+            <code>/api/v1/event</code> <a href="api/v1/event" id="fetch-event">  fetch data <span class="material-icons">ads_click</span></a>
           </div>
         </div>
       </div>
@@ -45,11 +51,18 @@
             <code>/api/v1/context</code> <a href="api/v1/context" target="_blanck">  open in new tab <span class="material-icons">open_in_new</span></a>
           </div>
           <div>
-            <code>/api/v1/context</code> <a href="api/v1/context" target="_blanck">  fetch data <span class="material-icons">ads_click</span></a>
+            <code>/api/v1/context</code> <a href="api/v1/context" id="fetch-context">  fetch data <span class="material-icons">ads_click</span></a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div>
+      <br>
+      <pre>
+        <code id="fetched-response" class="language-json"></code>
+      </pre>
+    </div>
+  </main>
+  <footer>Coded by <a href="https://github.com/Drozerah" target="_blanck" >Drozerah</a></footer>
 </body>
 </html>

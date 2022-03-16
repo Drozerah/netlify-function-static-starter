@@ -6,9 +6,18 @@
   padding: 0px; // remove default browser padding
 }
 
+/// colors
+$blueviolet:blueviolet;
+$blue:#5b5be0;
+$aliceblue: aliceblue;
+$white:white;
+$gray-ligthen-1:#D6D6D6;
+$gray-ligthen-2: #E7E7E7;
+$box-shadow-color: $gray-ligthen-1;
+
 html {
   // html element with no set height will auto adjuste according to the body height
-  background-color: white; // var
+  background-color: $white; // var
 }
 
 body {
@@ -17,31 +26,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-  background-attachment: #E7E7E7;
   font-family: 'Shippori Mincho', serif;
-}
-
-/// colors
-$blueviolet:blueviolet;
-$blue:#5b5be0;
-
-h1{
-  color: $blueviolet; // var
-}
-.content{
-  width:80%;
-  h2{
-    text-align: center;
-    margin: 50px;
-  }
-  .endpoints {
-    display: flex;
-    width: 100%;
-    .endpoint{
-      width: 50%;
-    }
-  }
 }
 
 a{
@@ -52,18 +37,28 @@ a{
   }
 }
 
+h1{
+  color: $blueviolet; // var
+  margin-top: 50px;
+}
+
 p{
   min-height: 50px;
 }
 
-div code {
-  background-color: #E7E7E7;
-  padding: 2px 5px;
-  margin-left: 5px;
-  border-radius: 3px;
-  box-shadow: 0 2px 0 #d6d6d6;
-  color: $blue; // var
-  font-weight: bold;
+pre code {
+  box-shadow: none;
+}
+
+pre.active {
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  overscroll-behavior: contain;
+  border: 1px solid $aliceblue; // var
+  code.hljs{
+    overflow-x: initial;
+  }
 }
 
 .material-icons {
@@ -90,4 +85,34 @@ div code {
   /* Support for IE. */
   font-feature-settings: 'liga';
   transform: translateY(6px);
+}
+
+main{
+  margin-bottom: 20px;
+  width:80%;
+  h2{
+    text-align: center;
+    margin: 30px;
+  }
+  .endpoints {
+    display: flex;
+    width: 100%;
+    code{
+      background-color: $gray-ligthen-2; //var
+      padding: 2px 5px;
+      margin-left: 5px;
+      border-radius: 3px;
+      box-shadow: 0 2px 0 $box-shadow-color; // var
+      color: $blue; // var
+      font-weight: bold;
+    }
+    .endpoint{
+      width: 50%;
+    }
+  }
+}
+
+footer {
+  margin-top: auto;
+  margin-bottom: 20px;
 }
