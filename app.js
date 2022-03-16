@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     context: `${origin}/api/v1/context`
   }
   // fetch api by endpoint
+  // then update given HTMLElement text content
   const fetchAPI = (url, HTMLElement) => {
     fetch(url)
       .then((response) => response.json())
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       })
   }
   // handle click events
+  // fetch data
   document
     .getElementById('fetch-event')
     .addEventListener('click', (e) => {
