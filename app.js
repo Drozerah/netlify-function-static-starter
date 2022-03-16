@@ -1,33 +1,43 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  const display_response = document.getElementById('fetched-response')
-  const evt = document.getElementById('fetch-event')
-  const ctx = document.getElementById('fetch-context')
-  
-  evt.addEventListener('click', (e) => {
-    e.preventDefault()
-    fetch('http://localhost:8888/api/v1/event')
-    .then((response) => response.json())
-    .then((data) => {
-      display_response.innerHTML = JSON.stringify(data, 2, ' ')
-      hljs.highlightElement(display_response)
-      display_response.parentElement.classList.add('active')
-    }).catch((error) => {
-      console.log(error)
-    })
-  })
-  ctx.addEventListener('click', (e) => {
-    e.preventDefault()
-    fetch('http://localhost:8888/api/v1/context')
+  // refs
+  const display = document.getElementById('fetched-response')
+  // get page location origin
+  const origin = window.location.origin
+  // set api endpoints
+  const api = {
+    event: `${origin}/api/v1/event`,
+    context: `${origin}/api/v1/context`
+  }
+  // fetch api by endpoint
+  const fetchAPI = (url, HTMLElement) => {
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        display_response.innerHTML = JSON.stringify(data, 2, ' ')
-        hljs.highlightElement(display_response)
-        display_response.parentElement.classList.add('active')
-      }).catch((error) => {
-        console.log(error)
+        // inject response to HTMLElement
+        HTMLElement.innerHTML = JSON.stringify(data, 2, ' ')
+        // highlight HTMLElement
+        hljs.highlightElement(HTMLElement)
+        // add .active selector to HTMLElement parent Element
+        HTMLElement.parentElement.classList.add('active')
       })
+      .catch((error) => {
+        // print error
+        console.error(error)
+      })
+  }
+  // handle click events
+  document
+    .getElementById('fetch-event')
+    .addEventListener('click', (e) => {
+      e.preventDefault()
+      fetchAPI(api.event, display)
+    })
+  document
+    .getElementById('fetch-context')
+    .addEventListener('click', (e) => {
+      e.preventDefault()
+      fetchAPI(api.context, display)
   })
 })
-
