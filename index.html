@@ -4,10 +4,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css?v=hash">
+  <script src="/js/app.bundle.js?v=hash" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>APP_NAME</title>
 </head>
 <body>
-  <h1>Netlify Function</h1>
+  <h1>APP_NAME</h1>
+  <div class="content">
+    <h2>API Endpoints</h2>
+    <div class="endpoints">
+      <div class="endpoint">
+        <div>
+          <code>GET</code>
+          <code>/api/v1/event</code>
+        </div>
+        <br>
+        <p>Return netlify function request information (body, httpMethod, etc.)</p>
+        <br>
+        <div class="controls">
+          <div>
+            <code>/api/v1/event</code> <a href="api/v1/event" target="_blanck">  open in new tab <span class="material-icons">open_in_new</span></a>
+          </div>
+          <div>
+            <code>/api/v1/event</code> <a href="api/v1/event" target="_blanck">  fetch data <span class="material-icons">ads_click</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="endpoint">
+        <div>
+          <code>GET</code>
+          <code>/api/v1/context</code>
+        </div>
+        <br>
+        <p>Return information about invocation, function, and environment...</p>
+        <br>
+        <div class="controls">
+          <div>
+            <code>/api/v1/context</code> <a href="api/v1/context" target="_blanck">  open in new tab <span class="material-icons">open_in_new</span></a>
+          </div>
+          <div>
+            <code>/api/v1/context</code> <a href="api/v1/context" target="_blanck">  fetch data <span class="material-icons">ads_click</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -19,4 +19,75 @@ body {
   flex-direction: column;
   justify-content: center;
   background-attachment: #E7E7E7;
+  font-family: 'Shippori Mincho', serif;
+}
+
+/// colors
+$blueviolet:blueviolet;
+$blue:#5b5be0;
+
+h1{
+  color: $blueviolet; // var
+}
+.content{
+  width:80%;
+  h2{
+    text-align: center;
+    margin: 50px;
+  }
+  .endpoints {
+    display: flex;
+    width: 100%;
+    .endpoint{
+      width: 50%;
+    }
+  }
+}
+
+a{
+  color: $blue; // var
+  text-decoration: none;
+  &:hover{
+    color: $blueviolet; // var
+  }
+}
+
+p{
+  min-height: 50px;
+}
+
+div code {
+  background-color: #E7E7E7;
+  padding: 2px 5px;
+  margin-left: 5px;
+  border-radius: 3px;
+  box-shadow: 0 2px 0 #d6d6d6;
+  color: $blue; // var
+  font-weight: bold;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+  transform: translateY(6px);
 }
