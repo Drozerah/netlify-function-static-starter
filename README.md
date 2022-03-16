@@ -2,6 +2,8 @@
 
 > TODO write better README.md
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e8d222fd-1fd4-4a85-b5f8-348e6782dc28/deploy-status)](https://app.netlify.com/sites/netlify-function-static/deploys)
+
 Ensure `netlify-cli` is installed globally on your system...
 ````bash
 npm install -g netlify-cli
